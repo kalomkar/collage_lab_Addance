@@ -1,0 +1,484 @@
+{
+  "users": [
+    {
+      "id": "u-admin-main",
+      "name": "Amrutha Patil",
+      "email": "amruthapatil3355@gmail.com",
+      "password": "@dm!n",
+      "role": "admin",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:39:00.000Z"
+    },
+    {
+      "id": "u-admin-1",
+      "name": "System Administrator",
+      "email": "admin@college.edu",
+      "password": "admin123",
+      "role": "admin",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "u-lab-1",
+      "name": "Prof. Ramesh Kumar (Lab In-Charge)",
+      "email": "lab@college.edu",
+      "password": "lab123",
+      "role": "lab_incharge",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    }
+  ],
+  "settings": {
+    "collegeName": "Government BCA College & Technology Institute",
+    "address": "Tech Campus, Main Road, City - 585101",
+    "department": "Department of Computer Applications (BCA)",
+    "principalName": "Dr. V. S. Deshmukh",
+    "principalEmail": "srnmehtacollegekalburgi@gmail.com",
+    "senderEmail": "lab-system@college.edu",
+    "academicYear": "2026-2027",
+    "reportTitle": "COMPUTER LAB DAILY ATTENDANCE REPORT",
+    "smtpHost": "smtp.gmail.com",
+    "smtpPort": 587,
+    "smtpUsername": "srnmehtacollegekalburgi@gmail.com",
+    "smtpPassword": "soaq amxg qtgl zrzi",
+    "smtpUseTls": true,
+    "smtpUseSsl": false
+  },
+  "semesters": [
+    {
+      "id": "sem-1",
+      "name": "BCA 1st Semester",
+      "course": "BCA",
+      "section": "A",
+      "academicYear": "2026-2027",
+      "isActive": true
+    },
+    {
+      "id": "sem-3",
+      "name": "BCA 3rd Semester",
+      "course": "BCA",
+      "section": "A",
+      "academicYear": "2026-2027",
+      "isActive": true
+    },
+    {
+      "id": "sem-5",
+      "name": "BCA 5th Semester",
+      "course": "BCA",
+      "section": "A",
+      "academicYear": "2026-2027",
+      "isActive": true
+    }
+  ],
+  "students": [
+    {
+      "id": "stu-101",
+      "rollNumber": "101",
+      "enrollmentName": "ENR2026001",
+      "name": "Aarav Sharma",
+      "semesterId": "sem-1",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-102",
+      "rollNumber": "102",
+      "enrollmentName": "ENR2026002",
+      "name": "Ananya Patel",
+      "semesterId": "sem-1",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-103",
+      "rollNumber": "103",
+      "enrollmentName": "ENR2026003",
+      "name": "Rohan Gupta",
+      "semesterId": "sem-1",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-104",
+      "rollNumber": "104",
+      "enrollmentName": "ENR2026004",
+      "name": "Priya Verma",
+      "semesterId": "sem-1",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-105",
+      "rollNumber": "105",
+      "enrollmentName": "ENR2026005",
+      "name": "Vikram Singh",
+      "semesterId": "sem-1",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-301",
+      "rollNumber": "301",
+      "enrollmentName": "ENR2025001",
+      "name": "Aditi Joshi",
+      "semesterId": "sem-3",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-302",
+      "rollNumber": "302",
+      "enrollmentName": "ENR2025002",
+      "name": "Karan Malhotra",
+      "semesterId": "sem-3",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-303",
+      "rollNumber": "303",
+      "enrollmentName": "ENR2025003",
+      "name": "Neha Kulkarni",
+      "semesterId": "sem-3",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-304",
+      "rollNumber": "304",
+      "enrollmentName": "ENR2025004",
+      "name": "Rahul Deshmukh",
+      "semesterId": "sem-3",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-501",
+      "rollNumber": "501",
+      "enrollmentName": "ENR2024001",
+      "name": "Sneha Reddy",
+      "semesterId": "sem-5",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-502",
+      "rollNumber": "502",
+      "enrollmentName": "ENR2024002",
+      "name": "Amit Kulkarni",
+      "semesterId": "sem-5",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    },
+    {
+      "id": "stu-503",
+      "rollNumber": "503",
+      "enrollmentName": "ENR2024003",
+      "name": "Pooja Hegde",
+      "semesterId": "sem-5",
+      "academicYear": "2026-2027",
+      "section": "A",
+      "isActive": true,
+      "createdAt": "2026-09-18T04:03:39.174Z"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "sub-1",
+      "subjectCode": "BCA-101",
+      "subjectName": "C Programming Lab",
+      "semesterId": "sem-1",
+      "academicYear": "2026-2027",
+      "isActive": true
+    },
+    {
+      "id": "sub-2",
+      "subjectCode": "BCA-102",
+      "subjectName": "PC Software & Office Lab",
+      "semesterId": "sem-1",
+      "academicYear": "2026-2027",
+      "isActive": true
+    },
+    {
+      "id": "sub-3",
+      "subjectCode": "BCA-301",
+      "subjectName": "Data Structures & DBMS Lab",
+      "semesterId": "sem-3",
+      "academicYear": "2026-2027",
+      "isActive": true
+    },
+    {
+      "id": "sub-4",
+      "subjectCode": "BCA-302",
+      "subjectName": "Object Oriented Programming (C++) Lab",
+      "semesterId": "sem-3",
+      "academicYear": "2026-2027",
+      "isActive": true
+    },
+    {
+      "id": "sub-5",
+      "subjectCode": "BCA-501",
+      "subjectName": "Python & Web Programming Lab",
+      "semesterId": "sem-5",
+      "academicYear": "2026-2027",
+      "isActive": true
+    },
+    {
+      "id": "sub-6",
+      "subjectCode": "BCA-502",
+      "subjectName": "Java & Android Lab",
+      "semesterId": "sem-5",
+      "academicYear": "2026-2027",
+      "isActive": true
+    }
+  ],
+  "teachers": [
+    {
+      "id": "t-1",
+      "name": "Mrs. Sunita Patil",
+      "employeeId": "EMP-012",
+      "department": "Computer Science",
+      "email": "sunita.patil@college.edu",
+      "isActive": true
+    },
+    {
+      "id": "t-2",
+      "name": "Mr. Anand Kulkarni",
+      "employeeId": "EMP-018",
+      "department": "Computer Science",
+      "email": "anand.kulkarni@college.edu",
+      "isActive": true
+    },
+    {
+      "id": "t-3",
+      "name": "Dr. Rajeshwari Swami",
+      "employeeId": "EMP-024",
+      "department": "Computer Science",
+      "email": "rajeshwari.swami@college.edu",
+      "isActive": true
+    }
+  ],
+  "labSessions": [
+    {
+      "id": "session-1789918930367",
+      "attendanceDate": "2026-09-20",
+      "semesterId": "sem-1",
+      "subjectId": "sub-1",
+      "teacherId": "t-1",
+      "labRoom": "Lab-1 (Ground Floor)",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "remarks": "Regular practical session conducted successfully.",
+      "status": "finalized",
+      "createdBy": "Amrutha Patil",
+      "createdAt": "2026-09-20T15:42:10.367Z",
+      "updatedAt": "2026-09-20T15:42:10.367Z"
+    },
+    {
+      "id": "session-1789918976224",
+      "attendanceDate": "2026-09-20",
+      "semesterId": "sem-1",
+      "subjectId": "sub-1",
+      "teacherId": "t-1",
+      "labRoom": "Lab-1 (Ground Floor)",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "remarks": "Regular practical session conducted successfully.",
+      "status": "finalized",
+      "createdBy": "Amrutha Patil",
+      "createdAt": "2026-09-20T15:42:56.224Z",
+      "updatedAt": "2026-09-20T15:42:56.224Z"
+    },
+    {
+      "id": "session-1789919180561",
+      "attendanceDate": "2026-09-20",
+      "semesterId": "sem-5",
+      "subjectId": "sub-5",
+      "teacherId": "t-1",
+      "labRoom": "Lab-1 (Ground Floor)",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "remarks": "Regular practical session conducted successfully.",
+      "status": "finalized",
+      "createdBy": "Amrutha Patil",
+      "createdAt": "2026-09-20T15:46:20.561Z",
+      "updatedAt": "2026-09-20T15:46:20.561Z"
+    }
+  ],
+  "attendanceRecords": [
+    {
+      "id": "att-1789918930367-hxobi",
+      "labSessionId": "session-1789918930367",
+      "studentId": "stu-101",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:10.367Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918930367-znque",
+      "labSessionId": "session-1789918930367",
+      "studentId": "stu-102",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:10.367Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918930367-ogqb0",
+      "labSessionId": "session-1789918930367",
+      "studentId": "stu-103",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:10.367Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918930367-0mls3",
+      "labSessionId": "session-1789918930367",
+      "studentId": "stu-104",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:10.367Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918930367-q7j90",
+      "labSessionId": "session-1789918930367",
+      "studentId": "stu-105",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:10.367Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918976225-pm4n3",
+      "labSessionId": "session-1789918976224",
+      "studentId": "stu-101",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:56.224Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918976225-cc2f3",
+      "labSessionId": "session-1789918976224",
+      "studentId": "stu-102",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:56.224Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918976225-hpgxq",
+      "labSessionId": "session-1789918976224",
+      "studentId": "stu-103",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:56.224Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918976225-zdxgi",
+      "labSessionId": "session-1789918976224",
+      "studentId": "stu-104",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:56.224Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789918976225-aauh8",
+      "labSessionId": "session-1789918976224",
+      "studentId": "stu-105",
+      "attendanceStatus": "Present",
+      "markedAt": "2026-09-20T15:42:56.224Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789919180561-zma7t",
+      "labSessionId": "session-1789919180561",
+      "studentId": "stu-501",
+      "attendanceStatus": "Absent",
+      "markedAt": "2026-09-20T15:46:20.561Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789919180561-r0a93",
+      "labSessionId": "session-1789919180561",
+      "studentId": "stu-502",
+      "attendanceStatus": "Absent",
+      "markedAt": "2026-09-20T15:46:20.561Z",
+      "markedBy": "Amrutha Patil"
+    },
+    {
+      "id": "att-1789919180561-ictev",
+      "labSessionId": "session-1789919180561",
+      "studentId": "stu-503",
+      "attendanceStatus": "Absent",
+      "markedAt": "2026-09-20T15:46:20.561Z",
+      "markedBy": "Amrutha Patil"
+    }
+  ],
+  "generatedReports": [
+    {
+      "id": "rep-1789918953020",
+      "generatedAt": "2026-09-20T15:42:33.020Z",
+      "reportDate": "2026-09-20",
+      "filename": "BCA_Lab_Daily_Attendance_Report_2026-09-20.docx",
+      "filePath": "C:\\Users\\veere\\Downloads\\college-lab-attendance-daily-report-system\\reports\\BCA_Lab_Daily_Attendance_Report_2026-09-20.docx",
+      "generatedBy": "Amrutha Patil"
+    },
+    {
+      "id": "rep-1789919193029",
+      "generatedAt": "2026-09-20T15:46:33.029Z",
+      "reportDate": "2026-09-20",
+      "filename": "BCA_Lab_Daily_Attendance_Report_2026-09-20.docx",
+      "filePath": "C:\\Users\\veere\\Downloads\\college-lab-attendance-daily-report-system\\reports\\BCA_Lab_Daily_Attendance_Report_2026-09-20.docx",
+      "generatedBy": "Amrutha Patil"
+    }
+  ],
+  "emailHistory": [
+    {
+      "id": "email-1789918939286",
+      "sentAt": "2026-09-20T15:42:19.286Z",
+      "recipient": "srnmehtacollegekalburgi@gmail.com",
+      "subject": "BCA Computer Lab Daily Attendance Report – 2026-09-20",
+      "attachmentFilename": "BCA_Lab_Daily_Attendance_Report_2026-09-20.docx",
+      "status": "Failed",
+      "sentBy": "Amrutha Patil (GMAIL)",
+      "errorMessage": "Firebase: Error (auth/unauthorized-domain)."
+    },
+    {
+      "id": "email-1789918973105",
+      "sentAt": "2026-09-20T15:42:53.105Z",
+      "recipient": "srnmehtacollegekalburgi@gmail.com",
+      "subject": "BCA Computer Lab Daily Attendance Report – 2026-09-20",
+      "attachmentFilename": "BCA_Lab_Daily_Attendance_Report_2026-09-20.docx",
+      "status": "Sent",
+      "sentBy": "Amrutha Patil"
+    },
+    {
+      "id": "email-1789919213041",
+      "sentAt": "2026-09-20T15:46:53.041Z",
+      "recipient": "srnmehtacollegekalburgi@gmail.com",
+      "subject": "BCA Computer Lab Daily Attendance Report – 2026-09-20",
+      "attachmentFilename": "BCA_Lab_Daily_Attendance_Report_2026-09-20.docx",
+      "status": "Sent",
+      "sentBy": "Amrutha Patil"
+    }
+  ]
+}

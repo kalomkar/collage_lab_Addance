@@ -1,0 +1,6 @@
+{
+  "name": "College Lab Attendance & Daily Report System",
+  "description": "College computer lab attendance tracking, Word report generation, and automated Gmail API & SMTP email dispatch to the Principal for BCA semesters.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
