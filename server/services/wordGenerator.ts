@@ -89,11 +89,13 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
 
     // Metadata Bar
     new Table({
+      columnWidths: [3500, 3500, 3400],
       width: { size: 100, type: WidthType.PERCENTAGE },
       rows: [
         new TableRow({
           children: [
             new TableCell({
+              width: { size: 3500, type: WidthType.DXA },
               borders: standardBorders,
               shading: { fill: 'F1F5F9' },
               children: [
@@ -107,6 +109,7 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
               ]
             }),
             new TableCell({
+              width: { size: 3500, type: WidthType.DXA },
               borders: standardBorders,
               shading: { fill: 'F1F5F9' },
               children: [
@@ -120,6 +123,7 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
               ]
             }),
             new TableCell({
+              width: { size: 3400, type: WidthType.DXA },
               borders: standardBorders,
               shading: { fill: 'F1F5F9' },
               children: [
@@ -154,25 +158,25 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
     })
   ];
 
-  // Summary Table Header
+  // Summary Table Header (9 columns, widths in dxa totaling 10900)
+  const sumColWidths = [500, 1400, 2400, 1800, 1900, 700, 800, 700, 700];
   const summaryTableRows: TableRow[] = [
     new TableRow({
       tableHeader: true,
       children: [
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: '#', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Semester', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Subject & Code', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Teacher / Faculty', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Lab Room & Time', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Total', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Present', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Absent', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Attd. %', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[0], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: '#', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[1], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Semester', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[2], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Subject & Code', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[3], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Teacher / Faculty', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[4], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Lab Room & Time', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[5], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Total', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[6], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Present', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[7], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Absent', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[8], type: WidthType.DXA }, borders: standardBorders, shading: { fill: headerBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Attd. %', bold: true, color: 'FFFFFF', size: 19, font: 'Calibri' })] })] }),
       ]
     })
   ];
 
-  let totalSessions = sessions.length;
   let totalEntries = 0;
   let totalPresentGlobal = 0;
   let totalAbsentGlobal = 0;
@@ -186,37 +190,45 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
     summaryTableRows.push(
       new TableRow({
         children: [
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: String(idx + 1), size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: session.semesterName || 'Semester', bold: true, size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: `${session.subjectName} (${session.subjectCode})`, size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: session.teacherName || '', size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: `${session.labRoom || 'Lab'} (${session.startTime} - ${session.endTime})`, size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(session.totalStudents || 0), bold: true, size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(session.presentCount || 0), bold: true, color: presentGreen, size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(session.absentCount || 0), bold: true, color: absentRed, size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `${session.attendancePercentage || 0}%`, bold: true, color: (session.attendancePercentage || 0) >= 75 ? presentGreen : absentRed, size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[0], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: String(idx + 1), size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[1], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: session.semesterName || 'Semester', bold: true, size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[2], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: `${session.subjectName} (${session.subjectCode})`, size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[3], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: session.teacherName || '', size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[4], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: `${session.labRoom || 'Lab'} (${session.startTime} - ${session.endTime})`, size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[5], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(session.totalStudents || 0), bold: true, size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[6], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(session.presentCount || 0), bold: true, color: presentGreen, size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[7], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(session.absentCount || 0), bold: true, color: absentRed, size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: sumColWidths[8], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `${session.attendancePercentage || 0}%`, bold: true, color: (session.attendancePercentage || 0) >= 75 ? presentGreen : absentRed, size: 18, font: 'Calibri' })] })] }),
         ]
       })
     );
   });
 
   const overallPercentage = totalEntries > 0 ? Number(((totalPresentGlobal / totalEntries) * 100).toFixed(1)) : 0;
+  const mergedTotalsWidth = sumColWidths[0] + sumColWidths[1] + sumColWidths[2] + sumColWidths[3] + sumColWidths[4]; // 500+1400+2400+1800+1900 = 8200
 
   // Add Grand Total Row
   summaryTableRows.push(
     new TableRow({
       children: [
-        new TableCell({ borders: standardBorders, shading: { fill: 'E2E8F0' }, columnSpan: 5, children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: 'TOTALS / OVERALL AVERAGE:', bold: true, size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: 'E2E8F0' }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(totalEntries), bold: true, size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: 'E2E8F0' }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(totalPresentGlobal), bold: true, color: presentGreen, size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: 'E2E8F0' }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(totalAbsentGlobal), bold: true, color: absentRed, size: 19, font: 'Calibri' })] })] }),
-        new TableCell({ borders: standardBorders, shading: { fill: 'E2E8F0' }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `${overallPercentage}%`, bold: true, color: overallPercentage >= 75 ? presentGreen : absentRed, size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ 
+          width: { size: mergedTotalsWidth, type: WidthType.DXA },
+          borders: standardBorders, 
+          shading: { fill: 'E2E8F0' }, 
+          columnSpan: 5, 
+          children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: 'TOTALS / OVERALL AVERAGE:', bold: true, size: 19, font: 'Calibri' })] })] 
+        }),
+        new TableCell({ width: { size: sumColWidths[5], type: WidthType.DXA }, borders: standardBorders, shading: { fill: 'E2E8F0' }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(totalEntries), bold: true, size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[6], type: WidthType.DXA }, borders: standardBorders, shading: { fill: 'E2E8F0' }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(totalPresentGlobal), bold: true, color: presentGreen, size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[7], type: WidthType.DXA }, borders: standardBorders, shading: { fill: 'E2E8F0' }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(totalAbsentGlobal), bold: true, color: absentRed, size: 19, font: 'Calibri' })] })] }),
+        new TableCell({ width: { size: sumColWidths[8], type: WidthType.DXA }, borders: standardBorders, shading: { fill: 'E2E8F0' }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `${overallPercentage}%`, bold: true, color: overallPercentage >= 75 ? presentGreen : absentRed, size: 19, font: 'Calibri' })] })] }),
       ]
     })
   );
 
   docChildren.push(
     new Table({
+      columnWidths: sumColWidths,
       rows: summaryTableRows,
       width: { size: 100, type: WidthType.PERCENTAGE }
     }),
@@ -291,16 +303,17 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
       })
     );
 
-    // Student Attendance Detailed Table
+    // Student Attendance Detailed Table (5 columns, widths totaling 10900)
+    const studColWidths = [700, 1800, 4000, 2400, 2000];
     const studentTableRows: TableRow[] = [
       new TableRow({
         tableHeader: true,
         children: [
-          new TableCell({ borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Sl No', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Roll No', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Student Name', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Reg / Enrollment No', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
-          new TableCell({ borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Attendance Status', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: studColWidths[0], type: WidthType.DXA }, borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Sl No', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: studColWidths[1], type: WidthType.DXA }, borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Roll No', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: studColWidths[2], type: WidthType.DXA }, borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Student Name', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: studColWidths[3], type: WidthType.DXA }, borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Reg / Enrollment No', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
+          new TableCell({ width: { size: studColWidths[4], type: WidthType.DXA }, borders: standardBorders, shading: { fill: subHeaderBg }, children: [new Paragraph({ children: [new TextRun({ text: 'Attendance Status', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })] })] }),
         ]
       })
     ];
@@ -312,11 +325,12 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
       studentTableRows.push(
         new TableRow({
           children: [
-            new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: String(sIdx + 1), size: 18, font: 'Calibri' })] })] }),
-            new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: rec.rollNumber || '-', bold: true, size: 18, font: 'Calibri' })] })] }),
-            new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: rec.studentName || 'Student', bold: true, size: 19, font: 'Calibri' })] })] }),
-            new TableCell({ borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: rec.enrollmentNumber || '-', size: 18, font: 'Calibri' })] })] }),
+            new TableCell({ width: { size: studColWidths[0], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: String(sIdx + 1), size: 18, font: 'Calibri' })] })] }),
+            new TableCell({ width: { size: studColWidths[1], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: rec.rollNumber || '-', bold: true, size: 18, font: 'Calibri' })] })] }),
+            new TableCell({ width: { size: studColWidths[2], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: rec.studentName || 'Student', bold: true, size: 19, font: 'Calibri' })] })] }),
+            new TableCell({ width: { size: studColWidths[3], type: WidthType.DXA }, borders: standardBorders, shading: rowShading, children: [new Paragraph({ children: [new TextRun({ text: rec.enrollmentNumber || '-', size: 18, font: 'Calibri' })] })] }),
             new TableCell({ 
+              width: { size: studColWidths[4], type: WidthType.DXA },
               borders: standardBorders,
               shading: isPresent ? { fill: 'F0FDF4' } : { fill: 'FEF2F2' },
               children: [
@@ -340,6 +354,7 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
 
     docChildren.push(
       new Table({
+        columnWidths: studColWidths,
         rows: studentTableRows,
         width: { size: 100, type: WidthType.PERCENTAGE }
       }),
@@ -368,11 +383,13 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
       spacing: { before: 300, after: 150 }
     }),
     new Table({
+      columnWidths: [3600, 3600, 3700],
       width: { size: 100, type: WidthType.PERCENTAGE },
       rows: [
         new TableRow({
           children: [
             new TableCell({
+              width: { size: 3600, type: WidthType.DXA },
               borders: {
                 top: { style: BorderStyle.NONE },
                 bottom: { style: BorderStyle.NONE },
@@ -402,6 +419,7 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
               ]
             }),
             new TableCell({
+              width: { size: 3600, type: WidthType.DXA },
               borders: {
                 top: { style: BorderStyle.NONE },
                 bottom: { style: BorderStyle.NONE },
@@ -431,6 +449,7 @@ export async function generateWordReport(dateStr: string): Promise<{ filePath: s
               ]
             }),
             new TableCell({
+              width: { size: 3700, type: WidthType.DXA },
               borders: {
                 top: { style: BorderStyle.NONE },
                 bottom: { style: BorderStyle.NONE },

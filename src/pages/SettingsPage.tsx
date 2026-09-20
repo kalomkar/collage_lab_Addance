@@ -528,6 +528,57 @@ export const SettingsPage: React.FC = () => {
           )}
         </div>
 
+        {/* Render Cloud 24/7 Keep-Alive & Port 465 Assistant */}
+        <div className="bg-gradient-to-br from-blue-900/10 via-indigo-900/5 to-slate-900/10 p-6 rounded-xl border border-blue-200 shadow-sm space-y-4">
+          <div className="flex items-center justify-between border-b border-blue-200/60 pb-3">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">🚀</span>
+              <div>
+                <h2 className="text-base font-bold text-slate-900">Render Deployment & 24/7 Keep-Alive Guide</h2>
+                <p className="text-xs text-slate-600">Solve 15-minute server sleep, database reset, and email delivery on Render Free Tier</p>
+              </div>
+            </div>
+            <span className="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-md">Cloud Assistant</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs space-y-2">
+              <h4 className="font-bold text-slate-900 flex items-center gap-1.5 text-sm">
+                <span>⏱️</span>
+                <span>Prevent Server Sleep (24/7 Active)</span>
+              </h4>
+              <p className="text-slate-600 leading-relaxed">
+                Render Free Tier sleeps after 15 mins. To keep your server online 24/7 for FREE:
+              </p>
+              <ol className="list-decimal list-inside space-y-1 text-slate-700 font-medium">
+                <li>Create a free account on <a href="https://uptimerobot.com" target="_blank" rel="noreferrer" className="text-blue-600 underline font-bold">UptimeRobot.com</a> or <a href="https://cron-job.org" target="_blank" rel="noreferrer" className="text-blue-600 underline font-bold">cron-job.org</a></li>
+                <li>Add a new HTTP(s) Monitor pointing to your server's health URL:</li>
+              </ol>
+              <div className="p-2.5 bg-slate-900 text-emerald-400 font-mono rounded-lg flex items-center justify-between select-all">
+                <span className="truncate">{typeof window !== 'undefined' ? `${window.location.origin}/api/health` : 'https://your-app.onrender.com/api/health'}</span>
+              </div>
+              <p className="text-[11px] text-slate-500">Set interval to <strong>5 minutes</strong>. Render will NEVER go to sleep!</p>
+            </div>
+
+            <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs space-y-2">
+              <h4 className="font-bold text-slate-900 flex items-center gap-1.5 text-sm">
+                <span>✉️</span>
+                <span>Render Mail to Principal Fix</span>
+              </h4>
+              <p className="text-slate-600 leading-relaxed">
+                Render firewall blocks standard port 587. To ensure emails always reach the Principal:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 font-medium">
+                <li><strong>Method 1 (Best):</strong> Use <strong>Gmail API (Connect Gmail above)</strong>. Works 100% reliably via HTTPS port 443 with zero port block issues.</li>
+                <li><strong>Method 2:</strong> Set <strong>SMTP Port to 465 (SSL)</strong> with a 16-character <strong>Google App Password</strong> (from your Google Account Security settings).</li>
+              </ul>
+              <div className="mt-2 p-2 bg-emerald-50 text-emerald-800 rounded-lg text-[11px] font-semibold border border-emerald-200">
+                ✓ Port 465 SSL auto-fallback is enabled on this server.
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="flex justify-end">
           <button
             type="submit"

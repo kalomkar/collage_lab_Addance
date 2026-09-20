@@ -13,10 +13,30 @@ const upload = multer({ dest: path.join(process.cwd(), 'uploads') });
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+
+  // Static serving for public assets (logos, wallpapers)
+  const publicPath = path.join(process.cwd(), 'public');
+  if (fs.existsSync(publicPath)) {
+    app.use(express.static(publicPath));
+  }
+
+  // --- Keep-Alive / Health Endpoints for Render Uptime Monitoring ---
+  app.get("/api/health", (req, res) => {
+    res.json({
+      status: "ok",
+      uptime: process.uptime(),
+      timestamp: new Date().toISOString(),
+      message: "College Lab Attendance System Server is active and operational."
+    });
+  });
+
+  app.get("/api/ping", (req, res) => {
+    res.send("pong");
+  });
 
   // --- API Routes ---
 
@@ -435,7 +455,23 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`College Lab Attendance System running on http://localhost:${PORT}`);
+    console.log(`College Lab Attendance System running on http://0.0.0.0:${PORT}`);
+
+    // Automated Self-Ping Keep-Alive for Cloud Free Tiers (Render/Heroku/Koyeb)
+    const keepAliveUrl = process.env.SERVER_URL || process.env.RENDER_EXTERNAL_URL;
+    if (keepAliveUrl) {
+      console.log(`[Keep-Alive] Initializing 10-minute self-ping for ${keepAliveUrl}/api/health`);
+      setInterval(async () => {
+        try {
+          const pingRes = await fetch(`${keepAliveUrl.replace(/\/$/, '')}/api/health`);
+          if (pingRes.ok) {
+            console.log(`[Keep-Alive] Ping successful at ${new Date().toLocaleTimeString()}`);
+          }
+        } catch (err: any) {
+          console.warn(`[Keep-Alive] Ping warning: ${err.message}`);
+        }
+      }, 10 * 60 * 1000); // Every 10 minutes
+    }
   });
 }
 
